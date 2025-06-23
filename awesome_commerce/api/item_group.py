@@ -1,5 +1,5 @@
 import frappe
-from hopkins.api.item import ProductQuery, clean_slug
+from awesome_commerce.api.item import ProductQuery, clean_slug
 
 
 @frappe.whitelist(allow_guest=True)
@@ -24,13 +24,13 @@ def get_categories():
         for subcategory in subcategories:
             subcategory["subcategories"] = get_subcategories(subcategory["name"])
             if not subcategory.get("image"):
-                subcategory["image"] = '/assets/hopkins/img/no-image-250x250.png'
+                subcategory["image"] = '/assets/awesome_commerce/img/no-image-250x250.png'
         return subcategories
 
     category_tree = []
     for category in categories:
         if not category.get("image"):
-            category["image"] = '/assets/hopkins/img/no-image-250x250.png'
+            category["image"] = '/assets/awesome_commerce/img/no-image-250x250.png'
         category["subcategories"] = get_subcategories(category["name"])
         category_tree.append(category)
 
@@ -47,7 +47,7 @@ def search_category(categories, category_route):
         for category in categories:
             if category.get("custom_route") == category_route:
                 if not category.get("image"):
-                    category["image"] = '/assets/hopkins/img/no-image-250x250.png'
+                    category["image"] = '/assets/awesome_commerce/img/no-image-250x250.png'
                 return category
 
             if "subcategories" in category and category["subcategories"]:

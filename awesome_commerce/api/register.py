@@ -1,5 +1,5 @@
 import frappe
-from hopkins.api.cart import create_user
+from awesome_commerce.api.cart import create_user
 from builder_ecommerce.cart import add_new_address, create_party, create_contact, update_address_with_customer
 
 

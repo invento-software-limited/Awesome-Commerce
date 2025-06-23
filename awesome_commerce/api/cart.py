@@ -275,7 +275,7 @@ def set_cart_count(quotation=None, cart_items=None):
 #                 "item_name": item.item_name,
 #                 "item_code": item.item_code,
 #                 "qty": item.qty,
-#                 "image": item.image if item.image else '/assets/hopkins/img/no-image-250x250.png',
+#                 "image": item.image if item.image else '/assets/awesome_commerce/img/no-image-250x250.png',
 #                 "rate": frappe.utils.fmt_money(item.rate, currency=default_currency),
 #                 "amount": frappe.utils.fmt_money(item.amount, currency=default_currency),
 #             }
@@ -302,7 +302,7 @@ def set_cart_count(quotation=None, cart_items=None):
 #                 "item_name": item_details.item_name,
 #                 "item_code": item_details.item_code,
 #                 "qty": item.get("qty"),
-#                 "image": item_details.image if item_details.image else '/assets/hopkins/img/no-image-250x250.png',
+#                 "image": item_details.image if item_details.image else '/assets/awesome_commerce/img/no-image-250x250.png',
 #                 "rate": frappe.utils.fmt_money(item.get("price", 0), currency=default_currency),
 #                 "amount": frappe.utils.fmt_money(item.get("price", 0) * item.get('qty', 0), currency=default_currency),
 #             }
@@ -363,7 +363,7 @@ def get_cart_items_for_logged_in_user(quotation, default_currency):
             "item_name": item.item_name,
             "item_code": item.item_code,
             "qty": item.qty,
-            "image": item.image if item.image else '/assets/hopkins/img/no-image-250x250.png',
+            "image": item.image if item.image else '/assets/awesome_commerce/img/no-image-250x250.png',
             "rate": frappe.utils.fmt_money(item.rate, currency=default_currency),
             "amount": frappe.utils.fmt_money(item.amount, currency=default_currency),
         }
@@ -389,7 +389,7 @@ def get_cart_items_for_guest_user(default_currency):
             "item_name": item_details.item_name,
             "item_code": item_details.item_code,
             "qty": item.get("qty"),
-            "image": item_details.image if item_details.image else '/assets/hopkins/img/no-image-250x250.png',
+            "image": item_details.image if item_details.image else '/assets/awesome_commerce/img/no-image-250x250.png',
             "rate": frappe.utils.fmt_money(item.get("price", 0), currency=default_currency),
             "amount": frappe.utils.fmt_money(item.get("price", 0) * item.get('qty', 0), currency=default_currency),
         }
