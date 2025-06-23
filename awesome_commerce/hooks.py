@@ -44,7 +44,10 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_list_js = {
+    "Item": "public/js/item_list.js",
+    "Item Group": "public/js/item_group_list.js"
+}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -81,9 +84,8 @@ app_license = "mit"
 
 # Installation
 # ------------
-
-# before_install = "awesome_commerce.install.before_install"
-# after_install = "awesome_commerce.install.after_install"
+after_install = "awesome_commerce.install.after_install"
+after_migrate = "awesome_commerce.install.after_migrate"
 
 # Uninstallation
 # ------------
@@ -129,9 +131,11 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Item": "awesome_commerce.custom_functions.item.CustomItem",
+	"Item Group": "awesome_commerce.custom_functions.item_group.CustomItemGroup",
+	"Website Slideshow": "awesome_commerce.custom_functions.website_slideshow.CustomWebsiteSlideshow",
+}
 
 # Document Events
 # ---------------
@@ -174,9 +178,10 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "awesome_commerce.event.get_events"
-# }
+override_whitelisted_methods = {
+    "frappe.email.doctype.newsletter.newsletter.subscribe": "awesome_commerce.api.newsletter.subscribe",
+    "frappe.client.has_permission": "awesome_commerce.api.utils.has_permission"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -241,4 +246,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

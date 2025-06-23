@@ -1,0 +1,13 @@
+{
+ "creation": "2025-06-11 23:19:05.505267",
+ "docstatus": 0,
+ "doctype": "Builder Client Script",
+ "idx": 0,
+ "modified": "2025-02-27 11:05:18.373683",
+ "modified_by": "Administrator",
+ "name": "style.css",
+ "owner": "Administrator",
+ "public_url": "/files/page_styles/CSS-7b272-dae3679343.css?v=6c4adb35aa",
+ "script": "/* Write your CSS here */\n.truncate {\n  white-space: nowrap; \n  overflow: hidden; \n  text-overflow: ellipsis;\n}",
+ "script_type": "CSS"
+}
