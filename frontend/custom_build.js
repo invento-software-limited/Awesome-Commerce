@@ -14,4 +14,3 @@ console.log('Starting : Overriding src.');
 fs.copySync(overrideFilesPath, overrideSrcPath);
 console.log('Completed : Copying original src.');
 
-execSync('yarn install', {stdio: 'inherit'});
